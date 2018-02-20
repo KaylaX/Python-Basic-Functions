@@ -73,3 +73,8 @@ print('\n------Iterating-------------')
 print('Iterating through Z')
 for row in Z:
     print(row)
+
+#argmin: Returns the indices of the minimum values along an axis.
+b=array([0, 1, 2, 3, 0, 5])
+np.argmin(b)  # Only the first occurrence is returned.
+>>>0
