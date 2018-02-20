@@ -10,3 +10,6 @@ str.format
 'c, b, a'
 >>> '{0}{1}{0}'.format('abra', 'cad')   # arguments' indices can be repeated
 'abracadabra'
+
+str.split
+
