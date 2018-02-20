@@ -1,0 +1,14 @@
+from scipy.stats import binom,norm
+import matplotlib.pyplot as plt
+import numpy as np
+for n in [10,15,20,25]:
+    X=binom(n,0.8)
+    Y=norm(X.mean(),X.std())
+    binomX=range(n+1)
+    normX=np.linspace(0,n,100)
+    plt.vlines(binomX,0,X.pmf(binomX)) #vlines for vertical lines
+    plt.plot(normX,Y.pdf(normX))
+    plt.title('n='+str(n))
+    plt.show()
+    
+    
