@@ -11,4 +11,19 @@ for n in [10,15,20,25]:
     plt.title('n='+str(n))
     plt.show()
     
+from scipy.stats import rv_discrete,norm
+import numpy as np
+import matplotlib.pyplot as plt
+X=rv_discrete(values=([1,2,3,4,5,6],[1/6,1/6,1/6,1/6,1/6,1/6]))
+for n in range(1,4):
+    samples=sum(X.rvs(size=100000) for i in range(n)) # Compute a sample of the sum of n independent draws of X.
+    plt.hist(samples,bins=range(n*6+2),density=True,rwidth=0.5,align='left') # plot the histogram
     
+    # Plot the normal overlay.
+    mean=X.mean()*n
+    std=X.std()*np.sqrt(n)
+    Y=norm(loc=mean,scale=std)
+    values=np.linspace(0,n*6+1,100)
+    plt.plot(values,Y.pdf(values))
+    plt.title('n={}'.format(n))
+    plt.show()    
