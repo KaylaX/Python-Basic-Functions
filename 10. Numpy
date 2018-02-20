@@ -78,3 +78,6 @@ for row in Z:
 b=array([0, 1, 2, 3, 0, 5])
 np.argmin(b)  # Only the first occurrence is returned.
 >>>0
+
+#np.sqrt
+sigma_D=np.sqrt(1.59**2+2.05**2)
