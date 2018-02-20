@@ -1,0 +1,3 @@
+from scipy.stats import binom
+X=binom(n=10,p=0.955)
+print('Probability inspector accepts exactly 9 chips is, ',X.pmf(9))
