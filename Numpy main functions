@@ -1,0 +1,75 @@
+# Importing the numpy package
+import numpy as np
+
+# Creating arrays.
+print('-----Creating numpy arrays-----------------')
+X=np.zeros(5)               # a list of 5 zeros. 
+Y=np.ones((2,3))            # 2 rows and 3 columns of ones.
+Z=np.array([[1,2,3],[4,5,6]])  # 2 rows of numbers, with given number
+J=np.array([1,0,0,1])       # A list of 4 numbers.
+K=np.arange(2,13,2)        # Same as range, except for numpy arrays. The arguments are beginning number, ending number, interval
+L=np.linspace(1,10,20)     # 20 points that interpolate between 1 and 10.
+print('X={0}\n Y={1}\n Z={2}\n K={3}\n L={4}'.format(X,Y,Z,K,L))
+
+# Indexing
+print('\n------Indexing-------------------------')
+print('Z=\n',Z)
+print('K=\n',K)
+print('Z[0,1]=',Z[0,1])       # Element in 0th row and 1st column
+print('K[2]=',K[2])           # 3rd element
+print('Z[1]=Z[1,:]',Z[1])           # The second row
+print('Z[:,1]=',Z[:,1])       # The second column
+print('J=',J)
+print('Z[J,:]=',Z[J,:])       # access the given rows
+print('Z[:,J]=',Z[:,J])       # access the given columns
+print('K[:2]=',K[:2])         # Everything before the 3rd element.
+print('K[2:]=',K[2:])          # Everything since the 3rd element.
+print('K[1:3]=',K[1:3])          # From the 2nd up to before the 4th element.
+print('Z[:,:2]=\n',Z[:,:2])      # all rows and everything up to 3rd column
+print('K[[True,True,False,False,True,True]]=',K[[True,True,False,False,True,True]]) # Give only the first two and last two elements
+
+# Element wise operation
+print('\n----Element wise operations----------------')
+print('Z+Y=\n',Z+Y)
+print('Z-Y=\n',Z-Y)
+print('Z*2=\n',Z*2)
+print('Z/2=\n',Z/2)
+print('Z/Z=\n',Z/Z)
+print('Z>3=\n',Z>3)            # Create True/False array of whether each element is greater than 3
+print('-Z=\n',-Z)
+print('np.maximum(Z,3)=\n',np.maximum(Z,3))
+
+# Simple statistics
+print('\n-----Simple Statistics---------------------')
+print('np.sum(Z)=',np.sum(Z))
+print('np.average(Z)=',np.average(Z))
+print('np.std(Z)=',np.std(Z))
+print('np.max(Z)=',np.max(Z))
+print('Z>3=',Z>3)
+print('np.sum(Z>3)=',np.sum(Z>3))
+
+# Manipulating
+print('\n-----Manipulating---------------------')
+#print('Z=\n',Z)
+print('Z.T=\n',Z.T)              # Transpose
+X=np.copy(Z)
+X[np.where(X>=3)]=3              # Set where X is larger or equal to 3 to 3.
+print('X=np.copy(Z); X[np.where(X>=3)]=3')
+print('X=\n',X)
+print('np.hstack((Z,X))=\n',np.hstack((Z,X)))    # Horizontally stack two arrays together
+print('np.vstack((Z,X))=\n',np.vstack((Z,X)))   # Vertically stack two arrays together
+print('K=',K)
+print('K.reshape((3,2))=\n',K.reshape((3,2)))
+print('Z.shape=',Z.shape)
+L=np.array([3,4,1,2])
+print('L=',L)
+print('np.sort(J))=',np.sort(L))
+print('np.argsort(K)=',np.argsort(L))
+
+
+
+# Iterating
+print('\n------Iterating-------------')
+print('Iterating through Z')
+for row in Z:
+    print(row)
