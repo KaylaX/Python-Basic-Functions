@@ -20,3 +20,9 @@ Inserting conditions
 - if
 - ifelse:
 new_fellowship = [member if len(member)>=7 else '' for member in fellowship]
+
+Dict comprehensions
+a dict comprehension is the use of curly braces {} instead of []
+members of the dictionary are created using a colon :, as in key:value
+
+new_fellowship = {member:len(member) for member in fellowship}
