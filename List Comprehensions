@@ -15,3 +15,8 @@ squares = [x**2 for x in range(10)]
 
 print squares
 [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+Inserting conditions
+- if
+- ifelse:
+new_fellowship = [member if len(member)>=7 else '' for member in fellowship]
