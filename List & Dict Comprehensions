@@ -26,3 +26,30 @@ a dict comprehension is the use of curly braces {} instead of []
 members of the dictionary are created using a colon :, as in key:value
 
 new_fellowship = {member:len(member) for member in fellowship}
+
+Generator expression
+uses parentheses () instead of brackets []
+
+# List of strings
+fellowship = ['frodo', 'samwise', 'merry', 'aragorn', 'legolas', 'boromir', 'gimli']
+
+# List comprehension
+fellow1 = [member for member in fellowship if len(member) >= 7]
+
+# Generator expression
+fellow2 = (member for member in fellowship if len(member) >= 7)
+
+Generator functions
+
+functions that, like generator expressions, yield a series of values, instead of returning a single value. 
+
+A generator function is defined as you do a regular function, but whenever it generates a value, it uses the keyword yield instead of return. 
+
+# Define generator function get_lengths
+def get_lengths(input_list):
+    """Generator function that yields the
+    length of the strings in input_list."""
+
+    # Yield the length of a string
+    for person in input_list:
+        yield(len(person))
